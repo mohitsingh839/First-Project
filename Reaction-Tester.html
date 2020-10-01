@@ -1,93 +1,96 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title></title>
-</head>
-<style type="text/css">
-	#Mohit{
-		width: 100px;
-		height: 100px;
-		background-color: green;
-        position: relative;
-	}
-    #text{
-        font-weight: bold;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: green;
-    }
-    h1{
-        color: maroon;
-        font-family: sans-serif;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: underline;
-    }
-    h3{
-        font-family: cursive;
-        font-weight: inherit;
-        color: mediumblue ;
-    }
+    <head>
+	    <title>Reaction-Tester.js</title>
+    </head>
 
-</style>
-<body>
-    <h1>REACTION TESTER !!</h1>
-    <h3>Lets Check How Fast Are You:)</h3>
-    <h3>Click on the shape as fast as you can.</h3>
-    <p id="text">Your Time: <span id="timeTaken"></span></p>
-	<p id = "Mohit"></p>
-
-	<script type="text/javascript">
-            var start = new Date().getTime();
-
-            function getRandomColor() {
-                var letters = '0123456789ABCDEF';
-                var color = '#';
-                for (var i = 0; i < 6; i++) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                    }
-                return color;
-                }
-
-            function makeShape(){
-                var top = Math.random() * 400;
-                var width= Math.random() * 400;
-                var left = (Math.random() * 300) +100;
-    
-
-                if(Math.random()>0.5){
-                    document.getElementById("Mohit").style.borderRadius  = "50%";
-                }else{
-                    document.getElementById('Mohit').style.borderRadius = "0"
-                }
-
-                document.getElementById('Mohit').style.backgroundColor = getRandomColor();
-                document.getElementById('Mohit').style.top  = top +'px'
-                document.getElementById('Mohit').style.left  = left +'px'
-                document.getElementById('Mohit').style.width  = width +'px'
-                document.getElementById('Mohit').style.height  = width +'px'
-                document.getElementById('Mohit').style.display  = 'block'
-
-                start = new Date().getTime();
-            }
-
-            function afterDelay(){
-                setTimeout(makeShape, Math.random()*1000);
-            }
-            
-		afterDelay();
-		document.getElementById('Mohit').onclick = function(){
-			document.getElementById("Mohit").style.display = 'none'
-		
-        var end = new Date().getTime();
-        var timeTaken = (end - start)/1000
-
-        document.getElementById("timeTaken").innerHTML = timeTaken + "Secs"
-        afterDelay();
-        
+    <style type="text/css">
+        #Mohit{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: relative;
+        }
+        #text{
+            font-weight: bold;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: green;
+        }
+        h1{
+            color: maroon;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: underline;
+        }
+        h3{
+            font-family: cursive;
+            font-weight: inherit;
+            color: mediumblue ;
         }
 
-             
-	</script>
+    </style>
 
-</body>
+    <body>
+        <h1>REACTION TESTER !!</h1>
+        <h3>Lets Check How Fast Are You:)</h3>
+        <h3>Click on the shape as fast as you can.</h3>
+        <p id="text">Your Time: <span id="timeTaken"></span></p>
+        <p id = "Mohit"></p>
+
+        <script type="text/javascript">
+                var start = new Date().getTime();
+
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                        }
+                    return color;
+                    }
+
+                function makeShape(){
+                    var top = Math.random() * 400;
+                    var width= Math.random() * 400;
+                    var left = (Math.random() * 300) +100;
+        
+
+                    if(Math.random()>0.5){
+                        document.getElementById("Mohit").style.borderRadius  = "50%";
+                    }else{
+                        document.getElementById('Mohit').style.borderRadius = "0"
+                    }
+
+                    document.getElementById('Mohit').style.backgroundColor = getRandomColor();
+                    document.getElementById('Mohit').style.top  = top +'px'
+                    document.getElementById('Mohit').style.left  = left +'px'
+                    document.getElementById('Mohit').style.width  = width +'px'
+                    document.getElementById('Mohit').style.height  = width +'px'
+                    document.getElementById('Mohit').style.display  = 'block'
+
+                    start = new Date().getTime();
+                }
+
+                function afterDelay(){
+                    setTimeout(makeShape, Math.random()*1000);
+                }
+                
+            afterDelay();
+            document.getElementById('Mohit').onclick = function(){
+                document.getElementById("Mohit").style.display = 'none'
+            
+            var end = new Date().getTime();
+            var timeTaken = (end - start)/1000
+
+            document.getElementById("timeTaken").innerHTML = timeTaken + "Secs"
+            afterDelay();
+            
+            }
+
+        </script>
+
+    </body>
+
 </html>
